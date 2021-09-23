@@ -1,0 +1,9 @@
+{
+    "editor.fontSize": 15,
+    "files.autoSave": "afterDelay",
+    "editor.foldingImportsByDefault": true,
+    "rainbow_csv.enable_context_menu_tail": true,
+    "workbench.colorCustomizations": {
+        "[Default Dark+]": {}
+    }
+}
