@@ -31,5 +31,20 @@ code {
   color: white;
   border: none;
   border-radius: 5px;
+
+  margin: 5px;
+}
+
+
+.container a {
+  background: #5aa9c4;
+  padding: 8px 14px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+
+  margin: 5px;
+
+  text-decoration: none;
 }
 
