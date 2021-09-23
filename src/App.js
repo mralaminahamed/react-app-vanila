@@ -1,5 +1,6 @@
 import Clock from './Components/Clock';
 import Increment from './Components/Increment';
+import Toggle from './Components/Toggle';
 
 function App() {
   return [
@@ -7,6 +8,8 @@ function App() {
     <Clock locale='en' />,
     <Clock locale='ar-EG' />,
     <Increment />,
+    <Toggle />,
+    <Toggle />,
   ];
 }
 
