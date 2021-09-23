@@ -8,6 +8,7 @@ class Toggle extends Component {
 
         // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
+        this.deleteButton = this.deleteButton.bind(this);
     }
 
     handleClick(){
@@ -15,9 +16,10 @@ class Toggle extends Component {
             isToogleOn: !prevState.isToogleOn
         }));
     }
-    
-    deleteButton(item){
-        console.log(item);
+
+    deleteButton(e){
+        e.preventDefault();
+        console.log(this);
     }
 
     render(){
@@ -27,7 +29,7 @@ class Toggle extends Component {
                     {this.state.isToogleOn ? 'ON' : 'OFF'}
                 </button>
 
-                <a href='#' onClick={this.deleteButton(this)}>
+                <a href='#' onClick={this.deleteButton}>
                    Delete Button
                 </a>
             </div>
