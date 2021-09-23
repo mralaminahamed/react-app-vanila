@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  width: 80%;
+
+  margin: 150px auto;
+  text-align: center;
+
+  background: aliceblue;
+
+  padding: 25px 50px;
+}
+
+.container button {
+  background: deepskyblue;
+  padding: 8px 14px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
