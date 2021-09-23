@@ -24,11 +24,17 @@ class Clock extends Component {
 
     render(){
         const {date, locale} = this.state;
+        const containerAll = document.querySelectorAll('img');
         return (
             <h1 className='container'>
                 <span className='text'>
                     {date.toLocaleTimeString(locale)}
                 </span>
+                <br/>
+                <span className='text'>
+                    {containerAll.length}
+                </span>
+                <br/>
                 <button type='button' onClick={()=>this.handleClick('en-US')}>CLick Here</button>
             </h1>
         );
