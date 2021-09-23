@@ -9,14 +9,12 @@ console.log(logo);
 
 class Images extends Component {
     render(){
-        return (
-            [
+        return ([
             <img src={logo} alt='sample 00'/>,
             <img src={sample01} alt='sample 01'/>,
             <img src={sample02} alt='sample 02'/>,
             <img src={sample03} alt='sample 03'/>
-        ]
-        );
+        ]);
     }
 }
 
