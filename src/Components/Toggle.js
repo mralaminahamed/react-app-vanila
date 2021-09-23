@@ -15,6 +15,10 @@ class Toggle extends Component {
             isToogleOn: !prevState.isToogleOn
         }));
     }
+    
+    deleteButton(item){
+        console.log(item);
+    }
 
     render(){
         return (
@@ -22,6 +26,10 @@ class Toggle extends Component {
                 <button onClick={this.handleClick}>
                     {this.state.isToogleOn ? 'ON' : 'OFF'}
                 </button>
+
+                <a href='#' onClick={this.deleteButton(this)}>
+                   Delete Button
+                </a>
             </div>
         );
     }
