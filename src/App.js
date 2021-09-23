@@ -1,4 +1,5 @@
 import Clock from './Components/Clock';
+import Images from './Components/Images';
 import Increment from './Components/Increment';
 import Toggle from './Components/Toggle';
 
@@ -10,6 +11,7 @@ function App() {
     <Increment />,
     <Toggle />,
     <Toggle />,
+    <Images />,
   ];
 }
 
