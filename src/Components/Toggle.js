@@ -4,7 +4,7 @@ class Toggle extends Component {
     constructor(props){
         super(props);
 
-        this.state = { isToogleOn: true };
+        this.state = { isToggleOn: true };
 
         // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
@@ -13,7 +13,7 @@ class Toggle extends Component {
 
     handleClick(){
         this.setState(prevState=>({
-            isToogleOn: !prevState.isToogleOn
+            isToggleOn: !prevState.isToggleOn
         }));
     }
 
@@ -26,9 +26,10 @@ class Toggle extends Component {
         return (
             <div className='container'>
                 <button onClick={this.handleClick}>
-                    {this.state.isToogleOn ? 'ON' : 'OFF'}
+                    {this.state.isToggleOn ? 'ON' : 'OFF'}
                 </button>
 
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a href='#' onClick={this.deleteButton}>
                    Delete Button
                 </a>
