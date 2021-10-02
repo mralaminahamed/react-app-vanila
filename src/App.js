@@ -17,6 +17,8 @@
 import Section from "./Components/Template/Section";
 import {Component} from "react";
 import ThemeContext from './contexts/themeContext'
+import Form from "./Components/FormRef";
+import WindowSized from "./Components/window/sized";
 
 export default class App extends Component {
     state = {
@@ -35,11 +37,15 @@ export default class App extends Component {
     render() {
         const {theme} = this.state;
         return (
-            <div className='container'>
-                <ThemeContext.Provider value={{theme, switchTheme : this.switchTheme}}>
-                    <Section/>
-                </ThemeContext.Provider>
-            </div>
+            <>
+                <WindowSized/>
+                <div className='container'>
+                    <ThemeContext.Provider value={{theme, switchTheme: this.switchTheme}}>
+                        <Section/>
+                    </ThemeContext.Provider>
+                </div>
+                <Form/>
+            </>
         )
     }
 
