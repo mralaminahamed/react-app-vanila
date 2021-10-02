@@ -1,71 +1,71 @@
-function IsJsonString(str) {
-    try {
-        JSON.parse(str);
-    } catch (e) {
-        return false;
-    }
-    return true;
-}
-
-/*export*/
+/*export */
 function sendRequest(options, callback, fallback) {
-    const {url, method, async, header, data} = options;
-    let dataType, response;
+    let dataType = 'unrecognized';
 
     if (typeof options === "object") {
-        if (method !== undefined && url !== undefined) {
-            let request = new XMLHttpRequest();
-            request.open(method, url, async);
-            //set header for xhr request
-            if (header !== null && typeof header == "object") {
-                Object.keys(header).forEach((value, name) => {
-                    request.setRequestHeader(name, value);
-                    if (value.indexOf('form') !== -1) {
-                        dataType = 'formData';
-                    }
-                    if (value.indexOf('json') !== -1) {
-                        dataType = 'jsonData';
-                    }
-                })
-            }
-
-            //send data with xhr request
-            if (data !== null && typeof data == "object") {
-                if (dataType === 'jsonData') {
-                    request.send(JSON.stringify(data));
+        if (options.method !== undefined && options.url !== undefined) {
+            if (typeof XMLHttpRequest !== "undefined") {
+                let request = new XMLHttpRequest();
+                request.open(options.method, options.url, options.async);
+                //set header for xhr request
+                if (options.header !== null && typeof options.header == "object") {
+                    options.header.forEach((item) => {
+                        Object.keys(item).forEach((name) => {
+                            let value = item[name];
+                            request.setRequestHeader(name, value);
+                            if (value.indexOf('form') !== -1) {
+                                dataType = 'formData';
+                            }
+                            if (value.indexOf('json') !== -1) {
+                                dataType = 'jsonData';
+                            }
+                        })
+                    })
                 }
-                if (dataType === 'formData') {
-                    let formData = new FormData();
-                    Object.keys(data).forEach(function (key) {
-                        formData.append(key, data[key]);
-                    });
-                    request.send(formData);
-                }
-            } else {
-                request.send();
-            }
-            //catch sate of xhr
-            request.onreadystatechange = function (event) {
-                if (event.currentTarget.readyState === 4) {
-                    if (event.currentTarget.status === 0) {
-                        fallback(new Error(`Request send failed ${url}`));
-                    }
-                    if (event.currentTarget.status === 200) {
-                       // console.log(`Response has been received from ${url}`)
-                       //  if (IsJsonString(event.currentTarget.responseText)) {
-                       //      response = JSON.parse(event.currentTarget.responseText);
-                       //  } else  {
-                       //      response = {
-                       //          'type' : 'raw',
-                       //          'data' : event.currentTarget.responseText
-                       //      }
-                       //  }
 
-                        if (typeof callback === 'function') {
-                            callback(event.currentTarget.responseText)
+                //send data with xhr request
+                if (dataType !== 'unrecognized') {
+                    if (options.data !== undefined && options.data !== null && typeof options.data == "object") {
+                        //send json data
+                        if (dataType === 'jsonData') {
+                            request.send(JSON.stringify(options.data));
+                        }
+                        //send form data
+                        if (dataType === 'formData') {
+                            let formData = new FormData();
+                            Object.keys(options.data).forEach(function (key) {
+                                formData.append(key, options.data[key]);
+                            });
+                            request.send(formData);
+                        }
+                    }
+                } else {
+                    request.send();
+                }
+
+                //catch sate of xhr
+                request.onreadystatechange = function () {
+                    if (this.readyState === 4) {
+                        if (this.status === 0) {
+                            fallback(new Error(`Request send failed ${options.url}`));
+                        }
+                        if (this.status === 200) {
+                            // console.log(`Response has been received from ${url}`)
+                            //  if (IsJsonString(event.currentTarget.responseText)) {
+                            //      response = JSON.parse(event.currentTarget.responseText);
+                            //  } else  {
+                            //      response = {
+                            //          'type' : 'raw',
+                            //          'data' : event.currentTarget.responseText
+                            //      }
+                            //  }
+
+                            callback(this.responseText)
                         }
                     }
                 }
+            } else {
+                fallback(new Error("Runtime Environment could not support XMLHttpRequest"));
             }
         } else {
             fallback(new Error("Request Method and URL can not be empty"));
