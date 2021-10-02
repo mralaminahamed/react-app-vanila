@@ -2,24 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86a5b9e0-efba-454c-ab1d-595f57aa7b9d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/HOC/ClickCounter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/HOC/Counter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/HOC/HoverCounter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/HOC/WithCounter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Inertance/Emoji.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Inertance/Text.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Template/Content.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Template/Section.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/composetion/Brackets.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/composetion/Emoji.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/composetion/Text.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/contexts/themeContext.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/Context.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/request/request.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/request/sendRequest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/FormRef.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Input.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/window/UseWindowWidth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/window/sized.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/request/sendRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/request/sendRequest.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +100,8 @@
       <workItem from="1632925769559" duration="607000" />
       <workItem from="1632932214639" duration="2199000" />
       <workItem from="1633019467229" duration="10547000" />
+      <workItem from="1633065845181" duration="4556000" />
+      <workItem from="1633118554088" duration="2580000" />
     </task>
     <servers />
   </component>
