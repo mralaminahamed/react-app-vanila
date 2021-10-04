@@ -7,12 +7,14 @@ export default function Form (){
     useEffect(()=>{
         inputRef.current.focus();
         console.log(inputRef.current)
+        console.log(inputRef.current.value)
     },[])
 
     return (
         <div className={'container'}>
             <p>
                 <ForwardedRef ref={inputRef} type={'text'} placeholder={'Enter something'}/>
+                <input type='color'/>
             </p>
         </div>
     )
